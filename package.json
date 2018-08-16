@@ -1,0 +1,25 @@
+{
+    "license": "MIT",
+    "version": "1.0.0",
+    "author": "ctf0",
+    "name": "vue-stagger",
+    "main": "src/Stagger.vue",
+    "description": "vue v2 transition stagger component",
+    "homepage": "https://github.com/ctf0/vue-stagger",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ctf0/vue-stagger.git"
+    },
+    "peerDependecies": {
+        "vue": "^2.0.0"
+    },
+    "dependencies": {
+        "velocity-animate": "^1.0.0"
+    },
+    "keywords": [
+        "vue",
+        "component",
+        "stagger",
+        "transition"
+    ]
+}
