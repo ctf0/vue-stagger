@@ -42,8 +42,16 @@ export default {
             required: false,
             default() {
                 return {}
-            }
-        }
+            },
+        },
+        enterAtOnce: {
+            type: Boolean,
+            default: false
+        },
+        leaveAtOnce: {
+            type: Boolean,
+            default: false
+        },
     },
     data() {
         return {
@@ -52,16 +60,26 @@ export default {
     },
     methods: {
         beforeEnter(el) {
-            Object.assign(el.style, this.beforeEnterStyles)
+            Velocity(
+                el,
+                this.beforeEnterStyles,
+            )
         },
         enter(el, done) {
-            this.animate(el, done, this.enterStyles)
+            if (this.enterAtOnce) {
+                this.count = 0
+            }
+
+            this.animate(el, this.enterStyles, done)
         },
         leave(el, done) {
-            this.count = 0
-            this.animate(el, done, this.leaveStyles)
+            if (this.leaveAtOnce) {
+                this.count = 0
+            }
+
+            this.animate(el, this.leaveStyles, done)
         },
-        animate(el, done, styles) {
+        animate(el, styles, done) {
             this.count++
 
             Velocity(
@@ -69,10 +87,17 @@ export default {
                 styles,
                 Object.assign(this.options, {
                     complete: done,
-                    delay: this.count * this.delay
+                    delay: this.count * this.delay,
                 })
             )
-        }
-    }
+        },
+    },
+    watch: {
+        count(val) {
+            setTimeout(() => {
+                this.count = 0
+            }, val * this.delay)
+        },
+    },
 }
 </script>
