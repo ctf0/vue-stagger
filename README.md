@@ -25,21 +25,22 @@ npm install vue-stagger --save
         :enter-styles="{}"
         :leave-styles="{}"
         :delay="150"
-        tag="div">
+        tag="div"
+        :options="{}">
 
         // your data
     </transition-stagger>
     ```
 
-    |        prop       |      required      |  type  | default |   description    |
-    |-------------------|--------------------|--------|---------|------------------|
-    | tag               | :x:                | string | ul      |                  |
-    | delay             | :white_check_mark: | number |         |                  |
-    | beforeEnterStyles | :white_check_mark: | object |         | [css-props][css] |
-    | enterStyles       | :white_check_mark: | object |         | [v-props][velo]  |
-    | leaveStyles       | :white_check_mark: | object |         | [v-props][velo]  |
+    |        prop       |      required      |  type  | default |          description          |
+    |-------------------|--------------------|--------|---------|-------------------------------|
+    | tag               | :x:                | string | ul      |                               |
+    | delay             | :white_check_mark: | number |         | in milliseconds               |
+    | beforeEnterStyles | :white_check_mark: | object |         | [css-props][css]              |
+    | enterStyles       | :white_check_mark: | object |         | [v-props][velo]               |
+    | leaveStyles       | :white_check_mark: | object |         | [v-props][velo]               |
+    | options           | :x:                | object | {}      | extra velocity [options][opt] |
 
-    [velo]: https://github.com/julianshapiro/velocity/wiki/Basic---Properties-Map
+    [velo]: http://velocityjs.org/#cssSupport
+    [opt]: http://velocityjs.org/
     [css]: https://www.w3schools.com/jsref/dom_obj_style.asp
-
-- all the parent component `data & porps` are inharited inside the `transition-stagger`, so your usage remains the same whether you used the `transition-stagger` or not, however for **methods** sadly you'll have to use `$parent.methodName()`

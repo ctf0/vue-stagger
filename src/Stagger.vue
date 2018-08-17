@@ -36,12 +36,19 @@ export default {
         leaveStyles: {
             type: Object,
             required: true
+        },
+        options: {
+            type: Object,
+            required: false,
+            default() {
+                return {}
+            }
         }
     },
     data() {
-        return Object.assign({
+        return {
             count: 0
-        }, this.$parent.$data, this.$parent.$props)
+        }
     },
     methods: {
         beforeEnter(el) {
@@ -57,13 +64,14 @@ export default {
         animate(el, done, styles) {
             this.count++
 
-            return setTimeout(() => {
-                Velocity(
-                    el,
-                    styles,
-                    {complete: done}
-                )
-            }, this.count * this.delay)
+            Velocity(
+                el,
+                styles,
+                Object.assign(this.options, {
+                    complete: done,
+                    delay: this.count * this.delay
+                })
+            )
         }
     }
 }
