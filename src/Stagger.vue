@@ -42,7 +42,7 @@ export default {
             required: false,
             default() {
                 return {}
-            },
+            }
         },
         enterAtOnce: {
             type: Boolean,
@@ -51,7 +51,7 @@ export default {
         leaveAtOnce: {
             type: Boolean,
             default: false
-        },
+        }
     },
     data() {
         return {
@@ -87,17 +87,17 @@ export default {
                 styles,
                 Object.assign(this.options, {
                     complete: done,
-                    delay: this.count * this.delay,
+                    delay: this.count * this.delay
                 })
             )
-        },
+        }
     },
     watch: {
         count(val) {
             setTimeout(() => {
                 this.count = 0
             }, val * this.delay)
-        },
-    },
+        }
+    }
 }
 </script>
