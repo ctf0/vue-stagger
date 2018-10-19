@@ -1,6 +1,8 @@
-# Vue Stagger
-
-[![npm](https://img.shields.io/npm/v/vue-stagger.svg?style=for-the-badge)](https://www.npmjs.com/package/vue-stagger) [![npm](https://img.shields.io/npm/dt/vue-stagger.svg?style=for-the-badge)](https://www.npmjs.com/package/vue-stagger)
+<h1 align="center">
+    Vue Stagger
+    <br>
+    <a href="https://www.npmjs.com/package/vue-stagger"><img src="https://img.shields.io/npm/v/vue-stagger.svg?style=for-the-badge" alt="npm" /></a> <a href="https://www.npmjs.com/package/vue-stagger"><img src="https://img.shields.io/npm/dt/vue-stagger.svg?style=for-the-badge" alt="npm" /></a>
+</h1>
 
 ## Installation
 
