@@ -21,7 +21,7 @@ npm install vue-stagger --save
     ```
 
 - now use it like
-    ```vue
+    ```html
     <transition-stagger
         :before-enter-styles="{translateY: -30, opacity: 0}"
         :enter-styles="{translateY: 0, opacity: 1}"
